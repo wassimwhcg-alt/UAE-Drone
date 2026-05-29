@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UAE Drone Business — Partner Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black: #0C0C0C;
+  --white: #F8F6F1;
+  --gold: #C8911A;
+  --gold-pale: #F5E8CC;
+  --ink: #1A1A1A;
+  --mid: #5C5C5C;
+  --light: #E8E4DC;
+  --rule: #D8D2C8;
+  --green: #1A5C35;
+  --green-pale: #D6EDE1;
+  --red: #8B1A1A;
+  --red-pale: #F0DADA;
+  --blue: #1A3A5C;
+  --blue-pale: #D6E4F0;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Syne', sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+/* ── PROGRESS BAR ── */
+#progress {
+  position: fixed; top: 0; left: 0; height: 3px;
+  background: var(--gold); width: 0%;
+  z-index: 9999; transition: width 0.1s;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(248,246,241,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 56px;
+}
+
+.nav-logo {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase;
+}
+
+.nav-items {
+  display: flex; gap: 0.25rem;
+}
+
+.nav-items a {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--mid);
+  text-decoration: none; padding: 0.35rem 0.75rem;
+  border-radius: 2px; transition: all 0.2s;
+}
+.nav-items a:hover { color: var(--ink); background: var(--light); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 56px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.hero-left {
+  padding: 5rem 3rem 5rem 4rem;
+  display: flex; flex-direction: column; justify-content: center;
+  border-right: 1px solid var(--rule);
+}
+
+.hero-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+
+.hero-tag::before {
+  content: ''; display: block;
+  width: 2rem; height: 1px; background: var(--gold);
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 900; line-height: 1.0;
+  color: var(--black); margin-bottom: 2rem;
+}
+
+.hero-title em {
+  font-style: italic; color: var(--gold);
+}
+
+.hero-desc {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.05rem; line-height: 1.75;
+  color: var(--mid); max-width: 480px;
+  font-weight: 400; margin-bottom: 3rem;
+}
+
+.hero-verdict {
+  background: var(--black);
+  color: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: 3px;
+  max-width: 420px;
+}
+
+.hero-verdict-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.hero-verdict-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; font-weight: 700;
+  line-height: 1.4; color: var(--white);
+}
+
+.hero-right {
+  padding: 5rem 4rem 5rem 3rem;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: 1px;
+  background: var(--light);
+}
+
+.stat-row {
+  background: var(--white);
+  padding: 1.6rem 2rem;
+  border-bottom: 1px solid var(--rule);
+  display: flex; justify-content: space-between; align-items: baseline;
+  transition: background 0.2s;
+}
+.stat-row:hover { background: var(--gold-pale); }
+
+.stat-label {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem; color: var(--mid);
+  font-weight: 400;
+}
+
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem; font-weight: 700;
+  color: var(--black);
+}
+
+.stat-value.gold { color: var(--gold); }
+
+/* ── SECTION COMMON ── */
+.section {
+  border-bottom: 1px solid var(--rule);
+  scroll-margin-top: 56px;
+}
+
+.section-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 5rem 4rem;
+}
+
+.section-header {
+  display: flex; align-items: baseline; gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem; letter-spacing: 0.15em;
+  color: var(--gold); text-transform: uppercase;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 900; color: var(--black);
+}
+
+.section-title em { font-style: italic; color: var(--gold); }
+
+/* ── OPPORTUNITY SECTION ── */
+#opportunity { background: var(--white); }
+
+.opp-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem;
+  align-items: start;
+}
+
+.opp-text p {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem; line-height: 1.8;
+  color: var(--mid); margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+
+.opp-text p strong {
+  color: var(--ink); font-weight: 700;
+}
+
+.callout {
+  background: var(--black);
+  padding: 2rem 2.5rem;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.callout-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.callout-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem; font-weight: 900;
+  color: var(--white); line-height: 1.1;
+}
+
+.callout-sub {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem; color: rgba(255,255,255,0.45);
+  margin-top: 0.4rem;
+}
+
+.fact-list {
+  list-style: none;
+  border: 1px solid var(--rule); border-radius: 2px;
+  overflow: hidden;
+}
+
+.fact-list li {
+  padding: 0.9rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem; line-height: 1.55;
+  color: var(--mid);
+  display: flex; align-items: flex-start; gap: 0.75rem;
+}
+.fact-list li:last-child { border-bottom: none; }
+
+.fact-list li::before {
+  content: '→';
+  color: var(--gold); font-size: 0.75rem;
+  flex-shrink: 0; margin-top: 0.15rem;
+}
+
+/* ── SCORING SECTION ── */
+#scoring { background: var(--light); }
+
+.score-table {
+  width: 100%; border-collapse: collapse;
+  border: 1px solid var(--rule);
+}
+
+.score-table th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--mid);
+  padding: 1rem 1.25rem;
+  border-bottom: 2px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  text-align: left; background: var(--white);
+}
+.score-table th:last-child { border-right: none; }
+
+.score-table td {
+  padding: 1.1rem 1.25rem;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  vertical-align: top;
+}
+.score-table td:last-child { border-right: none; }
+.score-table tr:last-child td { border-bottom: none; }
+
+.score-table tr.winner { background: var(--gold-pale); }
+.score-table tr.ok { background: var(--white); }
+.score-table tr.no { background: #F7F7F7; }
+
+.vertical-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--ink);
+}
+
+.score-cell {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem; color: var(--mid);
+  line-height: 1.5;
+}
+
+.badge {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 0.25rem 0.6rem;
+  border-radius: 2px; white-space: nowrap;
+}
+
+.badge.go    { background: var(--green-pale); color: var(--green); border: 1px solid rgba(26,92,53,0.2); }
+.badge.watch { background: var(--blue-pale);  color: var(--blue);  border: 1px solid rgba(26,58,92,0.2); }
+.badge.no    { background: var(--red-pale);   color: var(--red);   border: 1px solid rgba(139,26,26,0.2); }
+.badge.gold  { background: var(--gold-pale);  color: #8A6010;      border: 1px solid rgba(200,145,26,0.35); }
+
+.dots {
+  display: flex; gap: 3px; margin-top: 4px;
+}
+.dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--rule);
+}
+.dot.filled.green  { background: var(--green); }
+.dot.filled.gold   { background: var(--gold); }
+.dot.filled.blue   { background: var(--blue); }
+.dot.filled.red    { background: var(--red); }
+
+/* ── THE PLAN ── */
+#plan { background: var(--white); }
+
+.plan-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--rule); border-radius: 3px;
+  overflow: hidden;
+}
+
+.plan-card {
+  padding: 2.5rem;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  position: relative;
+  transition: background 0.25s;
+}
+
+.plan-card:nth-child(2n) { border-right: none; }
+.plan-card:nth-child(3), .plan-card:nth-child(4) { border-bottom: none; }
+.plan-card:hover { background: var(--gold-pale); }
+
+.plan-phase {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.2em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.plan-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem; font-weight: 700;
+  color: var(--black); margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.plan-items {
+  list-style: none;
+}
+
+.plan-items li {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem; line-height: 1.6;
+  color: var(--mid); padding: 0.35rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex; gap: 0.6rem; align-items: flex-start;
+}
+.plan-items li:last-child { border-bottom: none; }
+.plan-items li::before { content: '·'; color: var(--gold); font-size: 1.2rem; line-height: 1.2; flex-shrink: 0; }
+
+.plan-footer {
+  margin-top: 1.25rem; padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
+.plan-revenue {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700; color: var(--black);
+}
+
+.plan-revenue-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.15em;
+  color: var(--mid); text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+/* ── HARDWARE ── */
+#hardware { background: var(--light); }
+
+.hw-grid {
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem;
+}
+
+.hw-table {
+  border: 1px solid var(--rule); border-radius: 2px; overflow: hidden;
+}
+
+.hw-row {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  border-bottom: 1px solid var(--rule);
+  transition: background 0.2s;
+}
+.hw-row:last-child { border-bottom: none; }
+.hw-row:hover { background: var(--gold-pale); }
+
+.hw-row.header { background: var(--black); }
+
+.hw-cell {
+  padding: 0.9rem 1.1rem;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem; color: var(--mid);
+  border-right: 1px solid var(--rule);
+}
+.hw-cell:last-child { border-right: none; }
+
+.hw-row.header .hw-cell {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.5); text-transform: uppercase;
+}
+
+.hw-cell.item-name {
+  font-weight: 600; color: var(--ink);
+}
+
+.hw-cell.price {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.82rem; color: var(--black);
+  text-align: right;
+}
+
+.hw-row.total { background: var(--white); }
+.hw-row.total .hw-cell.item-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; color: var(--black);
+}
+.hw-row.total .hw-cell.price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem; font-weight: 700; color: var(--gold);
+}
+
+.hw-sidebar {
+  display: flex; flex-direction: column; gap: 1rem;
+}
+
+.hw-note {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--gold);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 2px 2px 0;
+}
+
+.hw-note-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.15em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.hw-note-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.85rem; line-height: 1.6;
+  color: var(--mid);
+}
+
+/* ── REVENUE MODEL ── */
+#revenue { background: var(--white); }
+
+.rev-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--rule); border: 1px solid var(--rule);
+  border-radius: 3px; overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.rev-card {
+  background: var(--white); padding: 2rem 1.75rem;
+  transition: background 0.25s;
+}
+.rev-card:hover { background: var(--gold-pale); }
+
+.rev-tier {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.18em;
+  color: var(--mid); text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.rev-service {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 1rem;
+}
+
+.rev-rate {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 900;
+  color: var(--gold); line-height: 1;
+}
+
+.rev-unit {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem; color: var(--mid);
+  margin-bottom: 0.75rem;
+}
+
+.rev-note {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem; line-height: 1.55;
+  color: var(--mid);
+}
+
+.rev-scenario {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--rule);
+  border: 1px solid var(--rule); border-radius: 3px;
+  overflow: hidden;
+}
+
+.scenario-card {
+  background: var(--white);
+  padding: 2rem 1.75rem;
+}
+
+.scenario-card.conservative { border-top: 3px solid var(--blue); }
+.scenario-card.base         { border-top: 3px solid var(--gold); }
+.scenario-card.upside       { border-top: 3px solid var(--green); }
+
+.scenario-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.15em;
+  text-transform: uppercase; margin-bottom: 0.4rem;
+}
+.scenario-card.conservative .scenario-label { color: var(--blue); }
+.scenario-card.base         .scenario-label { color: #8A6010; }
+.scenario-card.upside       .scenario-label { color: var(--green); }
+
+.scenario-name {
+  font-family: 'Syne', sans-serif; font-size: 0.9rem;
+  font-weight: 700; color: var(--ink); margin-bottom: 1rem;
+}
+
+.scenario-monthly {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem; font-weight: 900; color: var(--black);
+  line-height: 1;
+}
+
+.scenario-monthly-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; color: var(--mid); margin-bottom: 0.75rem;
+}
+
+.scenario-breakdown {
+  font-family: 'Syne', sans-serif; font-size: 0.8rem;
+  line-height: 1.65; color: var(--mid);
+}
+
+/* ── PARTNERSHIP ── */
+#partnership { background: var(--light); }
+
+.partner-split {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--rule); border-radius: 3px;
+  overflow: hidden;
+}
+
+.partner-side {
+  padding: 2.5rem 2.5rem;
+  border-right: 1px solid var(--rule);
+}
+.partner-side:last-child { border-right: none; }
+
+.partner-role {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.62rem; letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 0.6rem;
+}
+
+.partner-you   .partner-role { color: var(--blue); }
+.partner-them  .partner-role { color: var(--green); }
+
+.partner-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem; font-weight: 700;
+  color: var(--black); margin-bottom: 1.5rem;
+}
+
+.responsibility-list {
+  list-style: none;
+}
+
+.responsibility-list li {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem; line-height: 1.6;
+  color: var(--mid); padding: 0.65rem 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: flex-start; gap: 0.75rem;
+}
+.responsibility-list li:last-child { border-bottom: none; }
+
+.partner-you  .responsibility-list li::before { content: '◆'; color: var(--blue);  font-size: 0.5rem; margin-top: 0.3rem; flex-shrink: 0; }
+.partner-them .responsibility-list li::before { content: '◆'; color: var(--green); font-size: 0.5rem; margin-top: 0.3rem; flex-shrink: 0; }
+
+/* ── NEXT STEPS ── */
+#nextsteps { background: var(--black); }
+
+#nextsteps .section-title { color: var(--white); }
+#nextsteps .section-num { color: var(--gold); }
+#nextsteps .section-header { border-bottom-color: rgba(255,255,255,0.1); }
+
+.steps-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 3px; overflow: hidden;
+}
+
+.step-card {
+  background: #111;
+  padding: 2rem 1.75rem;
+  position: relative;
+  transition: background 0.25s;
+}
+.step-card:hover { background: #1a1a1a; }
+
+.step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem; font-weight: 900;
+  color: rgba(200,145,26,0.15); line-height: 1;
+  position: absolute; top: 1rem; right: 1.25rem;
+}
+
+.step-week {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.18em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 0.6rem; position: relative;
+}
+
+.step-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem; font-weight: 700;
+  color: var(--white); margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.step-actions {
+  list-style: none;
+}
+
+.step-actions li {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.78rem; line-height: 1.55;
+  color: rgba(255,255,255,0.4);
+  padding: 0.35rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.step-actions li:last-child { border-bottom: none; }
+
+/* ── AI PHASES ── */
+#ai { background: var(--white); }
+
+.phases-track {
+  position: relative;
+  margin-top: 3rem;
+}
+
+.phase-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  border: 1px solid var(--rule);
+  border-bottom: none;
+  background: var(--white);
+  transition: background 0.25s;
+}
+.phase-item:first-child { border-radius: 3px 3px 0 0; }
+.phase-item:last-child  { border-bottom: 1px solid var(--rule); border-radius: 0 0 3px 3px; }
+.phase-item:hover { background: var(--gold-pale); }
+
+.phase-left {
+  padding: 2rem 1.75rem;
+  border-right: 1px solid var(--rule);
+  display: flex; flex-direction: column; justify-content: flex-start;
+  background: var(--black);
+}
+.phase-item:first-child .phase-left { border-radius: 3px 0 0 0; }
+.phase-item:last-child  .phase-left { border-radius: 0 0 0 3px; }
+
+.phase-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem; font-weight: 900;
+  color: rgba(201,151,43,0.18); line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.phase-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.18em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.phase-timeline {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.3);
+}
+
+.phase-right {
+  padding: 2rem 2.25rem;
+}
+
+.phase-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem; font-weight: 700;
+  color: var(--black); margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.phase-tagline {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.12em;
+  color: var(--mid); text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.phase-body {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.88rem; line-height: 1.7;
+  color: var(--mid); font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.phase-body strong { color: var(--ink); font-weight: 700; }
+
+.phase-chips {
+  display: flex; flex-wrap: wrap; gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.chip {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.08em;
+  padding: 0.25rem 0.65rem; border-radius: 2px;
+}
+.chip.ops    { background: var(--blue-pale);  color: var(--blue);  border: 1px solid rgba(26,58,92,0.2); }
+.chip.data   { background: var(--gold-pale);  color: #8A6010;      border: 1px solid rgba(200,145,26,0.25); }
+.chip.ai     { background: #EDE5F8;           color: #5B21A0;      border: 1px solid rgba(91,33,160,0.2); }
+.chip.saas   { background: var(--green-pale); color: var(--green); border: 1px solid rgba(26,92,53,0.2); }
+.chip.accel  { background: #FDE8D0;           color: #8B4000;      border: 1px solid rgba(139,64,0,0.2); }
+
+.phase-output {
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: 2px; padding: 0.85rem 1.1rem;
+  display: flex; align-items: flex-start; gap: 0.65rem;
+}
+
+.phase-output-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem; letter-spacing: 0.15em;
+  color: var(--gold); text-transform: uppercase;
+  flex-shrink: 0; margin-top: 0.1rem;
+}
+
+.phase-output-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem; color: var(--ink);
+  line-height: 1.5; font-weight: 600;
+}
+
+/* accelerator table */
+.accel-table {
+  width: 100%; border-collapse: collapse;
+  border: 1px solid var(--rule); border-radius: 3px;
+  overflow: hidden; margin-top: 2.5rem;
+}
+.accel-table th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--white);
+  background: var(--black); padding: 0.9rem 1.1rem;
+  text-align: left; border-right: 1px solid rgba(255,255,255,0.08);
+}
+.accel-table th:last-child { border-right: none; }
+.accel-table td {
+  font-family: 'Syne', sans-serif; font-size: 0.85rem;
+  color: var(--mid); padding: 0.85rem 1.1rem;
+  border-bottom: 1px solid var(--rule);
+  border-right: 1px solid var(--rule);
+  vertical-align: top; font-weight: 400; line-height: 1.5;
+}
+.accel-table td:last-child { border-right: none; }
+.accel-table tr:last-child td { border-bottom: none; }
+.accel-table tr:hover td { background: var(--gold-pale); }
+.accel-table .accel-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; font-weight: 700; color: var(--ink);
+}
+.accel-table .accel-country {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.1em;
+  color: var(--mid); text-transform: uppercase;
+  display: block; margin-top: 0.15rem;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 2rem 4rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.footer-left {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem; color: rgba(255,255,255,0.3);
+}
+
+.footer-right {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.58rem; letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.2); text-transform: uppercase;
+  text-align: right;
+}
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+@media (max-width: 900px) {
+  #hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .opp-grid, .hw-grid, .partner-split, .plan-grid { grid-template-columns: 1fr; }
+  .rev-grid, .rev-scenario, .steps-grid { grid-template-columns: 1fr; }
+  .score-table { font-size: 0.75rem; }
+  nav .nav-items { display: none; }
+  .section-inner { padding: 3rem 1.5rem; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">UAE Drone · Partner Brief · 2025</div>
+  <div class="nav-items">
+    <a href="#opportunity">Opportunity</a>
+    <a href="#scoring">Scoring</a>
+    <a href="#plan">The Plan</a>
+    <a href="#hardware">Hardware</a>
+    <a href="#revenue">Revenue</a>
+    <a href="#ai">AI Roadmap</a>
+    <a href="#partnership">Partnership</a>
+    <a href="#nextsteps">Next Steps</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Confidential · Partner Review Copy</div>
+    <h1 class="hero-title">A Drone<br>Business for<br><em>the UAE.</em></h1>
+    <p class="hero-desc">A structured analysis of the best commercial drone vertical to enter — scored on ease of access, startup cost, and time to profitability. Built for a certified pilot ready to operate within 90 days.</p>
+    <div class="hero-verdict">
+      <div class="hero-verdict-label">The Verdict</div>
+      <div class="hero-verdict-text">Solar Inspection + Construction Mapping — starting under $10K, first revenue in weeks, recurring contracts within 90 days.</div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="stat-row">
+      <span class="stat-label">UAE Commercial Drone Market (2025)</span>
+      <span class="stat-value gold">$610M</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Market Growth Rate to 2030</span>
+      <span class="stat-value">18% CAGR</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Solar Inspection: time saved vs. manual</span>
+      <span class="stat-value gold">75%</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Day Rate Range (commercial operator)</span>
+      <span class="stat-value">$1K–3K</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Thermal Inspection Rate (advanced)</span>
+      <span class="stat-value gold">$400–600/hr</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Target: first revenue</span>
+      <span class="stat-value">Week 2–3</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Target: first solar contract</span>
+      <span class="stat-value">Month 2</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Total startup budget required</span>
+      <span class="stat-value gold">Under $10K</span>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section id="opportunity" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">01 — The Opportunity</span>
+      <h2 class="section-title">Why the UAE. <em>Why Now.</em></h2>
+    </div>
+    <div class="opp-grid">
+      <div class="opp-text reveal">
+        <p>The UAE has committed <strong>AED 1 billion ($272M) to drone technology development</strong> through the UAE Drone Strategy. Commercial drone registrations grew <strong>53% in Dubai alone</strong> last year. This is an infrastructure build — and every infrastructure build needs operators on the ground first.</p>
+        <p>The market isn't theoretical. There are <strong>900,000+ solar panels</strong> at the Mohammed bin Rashid Solar Park alone, all requiring regular inspection. Real estate developers in Dubai spend tens of thousands on aerial surveys every month. Construction firms need weekly progress documentation.</p>
+        <p>As a <strong>certified pilot</strong>, you skip the 3-week GCAA certification queue that stops most competitors. You are the product. The only question is which job type pays best, starts fastest, and builds toward something recurring.</p>
+        <p>That answer is solar inspection — anchored by the UAE's Clean Energy Strategy 2050, which mandates 100% clean energy by 2050. Every MW of solar installed creates a permanent, <strong>quarterly inspection requirement</strong>. The client base is institutional. The contracts are recurring. The sales cycle is weeks, not months.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="callout">
+          <div class="callout-label">Solar Inspection Saving</div>
+          <div class="callout-val">$2,100+<br>per MW</div>
+          <div class="callout-sub">drone vs. manual inspection cost difference</div>
+        </div>
+        <ul class="fact-list">
+          <li>Drones inspect 20MW solar farms in 2–4 hours (vs. 500 hours manually)</li>
+          <li>Thermal cameras detect faults manual inspectors miss 75–90% of the time</li>
+          <li>UAE solar capacity expanding under Clean Energy Strategy 2050 — more assets to inspect every year</li>
+          <li>DEWA has embedded drones as a core R&D enabler in its innovation mandate</li>
+          <li>Construction & real estate drone analytics is the fastest-growing segment in the UAE (2025)</li>
+          <li>No MoD security clearance required for private solar/construction land</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCORING -->
+<section id="scoring" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">02 — Vertical Comparison</span>
+      <h2 class="section-title">All Four Verticals. <em>One Winner.</em></h2>
+    </div>
+    <div class="reveal">
+      <table class="score-table">
+        <thead>
+          <tr>
+            <th style="width:16%">Vertical</th>
+            <th style="width:14%">Access<br>Difficulty</th>
+            <th style="width:14%">Startup<br>Cost</th>
+            <th style="width:14%">Time to<br>Revenue</th>
+            <th style="width:14%">Recurring<br>Contracts</th>
+            <th style="width:14%">Day Rate<br>Potential</th>
+            <th style="width:14%">Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="winner">
+            <td>
+              <div class="vertical-name">☀️ Solar Inspection</div>
+              <div style="font-size:0.7rem;color:var(--mid);margin-top:2px;">Primary vertical</div>
+            </td>
+            <td class="score-cell">
+              Low — private land, no MoD clearance needed
+              <div class="dots"><div class="dot filled green"></div><div class="dot"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              ~$5–6K total setup (thermal drone + compliance)
+              <div class="dots"><div class="dot filled green"></div><div class="dot"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              2–4 weeks to first paid job
+              <div class="dots"><div class="dot filled green"></div><div class="dot"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              Quarterly contracts per asset — structural demand
+              <div class="dots"><div class="dot filled green"></div><div class="dot filled green"></div><div class="dot filled green"></div></div>
+            </td>
+            <td class="score-cell">
+              $1,500–3,000/day (thermal)
+              <div class="dots"><div class="dot filled green"></div><div class="dot filled green"></div><div class="dot filled green"></div></div>
+            </td>
+            <td><span class="badge go">✓ PRIMARY</span></td>
+          </tr>
+          <tr class="winner">
+            <td>
+              <div class="vertical-name">🏗️ Construction<br>& Real Estate</div>
+              <div style="font-size:0.7rem;color:var(--mid);margin-top:2px;">Cash flow engine</div>
+            </td>
+            <td class="score-cell">
+              Very low — no special approvals for most sites
+              <div class="dots"><div class="dot filled green"></div><div class="dot"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              Near zero — existing drone likely qualifies
+              <div class="dots"><div class="dot filled green"></div><div class="dot"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              Week 2–3 realistic
+              <div class="dots"><div class="dot filled green"></div><div class="dot"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              Progress monitoring = weekly or monthly retainers
+              <div class="dots"><div class="dot filled green"></div><div class="dot filled green"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              $800–2,000/day (visual + mapping)
+              <div class="dots"><div class="dot filled green"></div><div class="dot filled green"></div><div class="dot"></div></div>
+            </td>
+            <td><span class="badge go">✓ SECONDARY</span></td>
+          </tr>
+          <tr class="ok">
+            <td>
+              <div class="vertical-name">🌾 Agriculture</div>
+              <div style="font-size:0.7rem;color:var(--mid);margin-top:2px;">Future vertical</div>
+            </td>
+            <td class="score-cell">
+              Medium — government agri programs, seasonal access
+              <div class="dots"><div class="dot filled gold"></div><div class="dot filled gold"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              High — multispectral sensors add $5–15K to setup
+              <div class="dots"><div class="dot filled gold"></div><div class="dot filled gold"></div><div class="dot filled gold"></div></div>
+            </td>
+            <td class="score-cell">
+              3–6 months — government tender cycles
+              <div class="dots"><div class="dot filled gold"></div><div class="dot filled gold"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              Seasonal contracts — not year-round
+              <div class="dots"><div class="dot filled gold"></div><div class="dot"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              $1,200–2,500/day
+              <div class="dots"><div class="dot filled gold"></div><div class="dot filled gold"></div><div class="dot"></div></div>
+            </td>
+            <td><span class="badge watch">LATER</span></td>
+          </tr>
+          <tr class="no">
+            <td>
+              <div class="vertical-name">🛡️ Security</div>
+              <div style="font-size:0.7rem;color:var(--mid);margin-top:2px;">Not yet</div>
+            </td>
+            <td class="score-cell">
+              Very high — MoD clearance, defence approvals, 6–18 month sales cycles
+              <div class="dots"><div class="dot filled red"></div><div class="dot filled red"></div><div class="dot filled red"></div></div>
+            </td>
+            <td class="score-cell">
+              High — enterprise hardware, encrypted feeds required
+              <div class="dots"><div class="dot filled red"></div><div class="dot filled red"></div><div class="dot filled red"></div></div>
+            </td>
+            <td class="score-cell">
+              6–18 months minimum
+              <div class="dots"><div class="dot filled red"></div><div class="dot filled red"></div><div class="dot filled red"></div></div>
+            </td>
+            <td class="score-cell">
+              Long contracts but government procurement only
+              <div class="dots"><div class="dot filled gold"></div><div class="dot filled gold"></div><div class="dot"></div></div>
+            </td>
+            <td class="score-cell">
+              $2,000–5,000/day but rare
+              <div class="dots"><div class="dot filled green"></div><div class="dot filled green"></div><div class="dot filled green"></div></div>
+            </td>
+            <td><span class="badge no">NOT YET</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- THE PLAN -->
+<section id="plan" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">03 — The 90-Day Plan</span>
+      <h2 class="section-title">From Certified Pilot<br>to <em>Recurring Revenue.</em></h2>
+    </div>
+    <div class="plan-grid reveal">
+      <div class="plan-card">
+        <div class="plan-phase">Phase 1 · Weeks 1–2</div>
+        <div class="plan-title">Legal & Compliance Foundation</div>
+        <ul class="plan-items">
+          <li>Apply for GCAA Unmanned Operator Authorisation (UOA) — AED 1,200 fee, 3-week process</li>
+          <li>Register on UAE Drone platform (drones.gov.ae)</li>
+          <li>Get Dubai Trade License with drone activity listed</li>
+          <li>Obtain third-party aviation liability insurance</li>
+          <li>Purchase DJI Mavic 3T thermal drone (or equivalent)</li>
+        </ul>
+        <div class="plan-footer">
+          <div class="plan-revenue">~$2,000</div>
+          <div class="plan-revenue-label">Compliance + license investment</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-phase">Phase 2 · Weeks 2–4</div>
+        <div class="plan-title">First Cash: Construction & Real Estate</div>
+        <ul class="plan-items">
+          <li>List services on UAE contractor platforms immediately</li>
+          <li>Direct outreach to 20 real estate agencies in Dubai — offer first job at reduced rate</li>
+          <li>Contact 10 AEC firms (AECOM, Atkins, Parsons UAE) for progress monitoring</li>
+          <li>Deliver 3 paid jobs — build portfolio of before/after deliverables</li>
+          <li>Document every job: footage, report format, turnaround time</li>
+        </ul>
+        <div class="plan-footer">
+          <div class="plan-revenue">$3,000–6,000</div>
+          <div class="plan-revenue-label">Target first-month revenue</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-phase">Phase 3 · Weeks 4–8</div>
+        <div class="plan-title">Solar Pipeline: Outreach & First Contract</div>
+        <ul class="plan-items">
+          <li>Cold outreach to solar O&M contractors (ENOVA, Siemens Gamesa UAE, TSK Group)</li>
+          <li>Contact DEWA Sustainability & Innovation Centre via their R&D partner portal</li>
+          <li>Pitch: "We inspected X MW in Y hours — here's the thermal report sample"</li>
+          <li>Offer a free 0.5MW pilot inspection in exchange for a reference and first contract</li>
+          <li>Target: 1 paid solar inspection contract signed by Week 8</li>
+        </ul>
+        <div class="plan-footer">
+          <div class="plan-revenue">$3,000–8,000</div>
+          <div class="plan-revenue-label">First solar contract value</div>
+        </div>
+      </div>
+      <div class="plan-card">
+        <div class="plan-phase">Phase 4 · Months 3–6</div>
+        <div class="plan-title">Retainers & Scale</div>
+        <ul class="plan-items">
+          <li>Convert solar clients to quarterly retainer contracts (3–4 inspections/year per asset)</li>
+          <li>Add 2nd construction/RE retainer client for weekly monitoring</li>
+          <li>Invest first profits into second drone or multispectral sensor upgrade</li>
+          <li>Apply to Dubai Future Accelerators with 3-month commercial traction as evidence</li>
+          <li>Evaluate hiring second certified pilot to run parallel jobs</li>
+        </ul>
+        <div class="plan-footer">
+          <div class="plan-revenue">$8,000–18,000</div>
+          <div class="plan-revenue-label">Target monthly revenue at Month 6</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HARDWARE -->
+<section id="hardware" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">04 — What You Need to Buy</span>
+      <h2 class="section-title">Full Setup.<br><em>Under $10K.</em></h2>
+    </div>
+    <div class="hw-grid reveal">
+      <div>
+        <div class="hw-table">
+          <div class="hw-row header">
+            <div class="hw-cell">Item</div>
+            <div class="hw-cell">Notes</div>
+            <div class="hw-cell price">Cost (USD)</div>
+          </div>
+          <div class="hw-row">
+            <div class="hw-cell item-name">DJI Mavic 3T (Thermal)</div>
+            <div class="hw-cell score-cell">RGB + thermal in one body. Backpack-portable. Perfect for solar inspection and construction. Refurbished available.</div>
+            <div class="hw-cell price">$3,200–4,800</div>
+          </div>
+          <div class="hw-row">
+            <div class="hw-cell item-name">Extra Batteries × 3</div>
+            <div class="hw-cell score-cell">Essential for full-day solar farm coverage without downtime.</div>
+            <div class="hw-cell price">~$180</div>
+          </div>
+          <div class="hw-row">
+            <div class="hw-cell item-name">ND Filter Set + Case</div>
+            <div class="hw-cell score-cell">For construction & real estate photography quality.</div>
+            <div class="hw-cell price">~$80</div>
+          </div>
+          <div class="hw-row">
+            <div class="hw-cell item-name">GCAA UOA Registration</div>
+            <div class="hw-cell score-cell">AED 1,200 (~$330). Mandatory for any commercial operation.</div>
+            <div class="hw-cell price">~$330</div>
+          </div>
+          <div class="hw-row">
+            <div class="hw-cell item-name">UAE Trade License</div>
+            <div class="hw-cell score-cell">Drone activity must be listed. Freezone license is cheapest entry point (~$1,000–1,500).</div>
+            <div class="hw-cell price">~$1,200</div>
+          </div>
+          <div class="hw-row">
+            <div class="hw-cell item-name">Aviation Liability Insurance</div>
+            <div class="hw-cell score-cell">Third-party, aviation-grade. Annual. Required by law and by clients.</div>
+            <div class="hw-cell price">~$400</div>
+          </div>
+          <div class="hw-row">
+            <div class="hw-cell item-name">Report Template + Branding</div>
+            <div class="hw-cell score-cell">Professional PDF inspection report template. First impression for clients.</div>
+            <div class="hw-cell price">~$200</div>
+          </div>
+          <div class="hw-row total">
+            <div class="hw-cell item-name">Total (refurb drone)</div>
+            <div class="hw-cell"></div>
+            <div class="hw-cell price">~$5,600</div>
+          </div>
+          <div class="hw-row total">
+            <div class="hw-cell item-name">Total (new drone)</div>
+            <div class="hw-cell"></div>
+            <div class="hw-cell price">~$7,200</div>
+          </div>
+        </div>
+      </div>
+      <div class="hw-sidebar">
+        <div class="hw-note">
+          <div class="hw-note-label">💡 Refurb Strategy</div>
+          <div class="hw-note-text">Buy a certified refurbished DJI Mavic 3T from DJI's own refurb store or a verified UAE dealer. Same warranty terms, saves $1,200–1,600. Use that buffer for 2 extra months of insurance and marketing.</div>
+        </div>
+        <div class="hw-note">
+          <div class="hw-note-label">📋 License Shortcut</div>
+          <div class="hw-note-text">A UAE Freezone trade license (e.g. Meydan Freezone, IFZA) is the cheapest legal vehicle — ~$1,000–1,200/year. No local sponsor required. You can add drone services activity to the license at setup. Corporate bank account follows within 2–3 weeks.</div>
+        </div>
+        <div class="hw-note">
+          <div class="hw-note-label">🔄 Defer if Tight</div>
+          <div class="hw-note-text">If under $7K, start with construction/real estate using existing RGB drone while UOA processes. Use first 3–4 jobs ($3,000–5,000 revenue) to fund thermal drone purchase before first solar contract.</div>
+        </div>
+        <div class="hw-note">
+          <div class="hw-note-label">⚡ Recovery Timeline</div>
+          <div class="hw-note-text">At $1,500/day for solar inspection, your full hardware investment is recovered in 4–5 working days of solar jobs. One monthly contract pays for everything.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE MODEL -->
+<section id="revenue" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">05 — The Numbers</span>
+      <h2 class="section-title">What You <em>Charge.</em><br>What You <em>Make.</em></h2>
+    </div>
+
+    <div class="rev-grid reveal">
+      <div class="rev-card">
+        <div class="rev-tier">Service Type A</div>
+        <div class="rev-service">Solar Thermal Inspection</div>
+        <div class="rev-rate">$400–600</div>
+        <div class="rev-unit">per hour · advanced thermal</div>
+        <div class="rev-note">Or $1,500–3,000/day. Recurring quarterly contracts per asset. Best margin service. Client: O&M contractors, solar operators, DEWA subcontractors.</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-tier">Service Type B</div>
+        <div class="rev-service">Construction Monitoring</div>
+        <div class="rev-rate">$150–300</div>
+        <div class="rev-unit">per hour · visual + mapping</div>
+        <div class="rev-note">Or $800–1,500/day. Weekly or bi-weekly retainers from contractors. High volume, lower margin. Client: AEC firms, real estate developers, project managers.</div>
+      </div>
+      <div class="rev-card">
+        <div class="rev-tier">Service Type C</div>
+        <div class="rev-service">Real Estate Aerial</div>
+        <div class="rev-rate">$300–600</div>
+        <div class="rev-unit">per project · photography + video</div>
+        <div class="rev-note">Fast turnaround, easy sales cycle. Good for filling calendar gaps between inspection jobs. Client: real estate agencies, property developers, hospitality.</div>
+      </div>
+    </div>
+
+    <div style="margin: 1.5rem 0 1rem; font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; color: var(--mid); text-transform: uppercase;" class="reveal">
+      Monthly Revenue Scenarios — After Month 3
+    </div>
+
+    <div class="rev-scenario reveal reveal-delay-1">
+      <div class="scenario-card conservative">
+        <div class="scenario-label">Conservative</div>
+        <div class="scenario-name">Slow start, 1–2 days/week</div>
+        <div class="scenario-monthly">$4,500</div>
+        <div class="scenario-monthly-label">per month</div>
+        <div class="scenario-breakdown">
+          2 solar inspection days @ $1,500 = $3,000<br>
+          2 construction jobs @ $700 = $1,500<br>
+          <br>
+          <strong>Hardware recovered: Month 2</strong>
+        </div>
+      </div>
+      <div class="scenario-card base">
+        <div class="scenario-label">Base Case</div>
+        <div class="scenario-name">4–5 billable days/week</div>
+        <div class="scenario-monthly">$12,000</div>
+        <div class="scenario-monthly-label">per month</div>
+        <div class="scenario-breakdown">
+          4 solar days @ $2,000 = $8,000<br>
+          4 construction/RE days @ $1,000 = $4,000<br>
+          <br>
+          <strong>1 quarterly retainer locked in</strong>
+        </div>
+      </div>
+      <div class="scenario-card upside">
+        <div class="scenario-label">Upside</div>
+        <div class="scenario-name">Retainers + scale, Month 6+</div>
+        <div class="scenario-monthly">$22,000</div>
+        <div class="scenario-monthly-label">per month</div>
+        <div class="scenario-breakdown">
+          3 solar retainers ($15K/quarter each) = $15,000<br>
+          Construction retainer + RE = $7,000<br>
+          <br>
+          <strong>2nd pilot hired, fleet of 2</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI ROADMAP -->
+<section id="ai" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">06 — The AI Roadmap</span>
+      <h2 class="section-title">From Drone Service<br>to <em>AI Platform.</em></h2>
+    </div>
+
+    <div class="reveal" style="max-width:740px;margin-bottom:3rem;">
+      <p style="font-family:'Syne',sans-serif;font-size:1rem;line-height:1.8;color:var(--mid);font-weight:400;">
+        The drone inspection business funds the AI build. The AI build transforms the business into a platform that accelerators fund and clients subscribe to. Every inspection job in Phase 1 is simultaneously a data collection event for Phase 3. By Month 6, you're not selling flights — you're selling intelligence.
+      </p>
+    </div>
+
+    <div class="phases-track reveal">
+
+      <!-- PHASE 1 -->
+      <div class="phase-item">
+        <div class="phase-left">
+          <div class="phase-num">01</div>
+          <div class="phase-label">Phase 1</div>
+          <div class="phase-timeline">Now → Month 2</div>
+        </div>
+        <div class="phase-right">
+          <div class="phase-title">Drone Service Operations</div>
+          <div class="phase-tagline">Cash generation · Data collection foundation</div>
+          <div class="phase-body">
+            Pure operations. Fly, capture thermal + RGB data, deliver manual inspection reports. Every job generates revenue <strong>and</strong> raw data. This is not just a service phase — it is the data collection infrastructure for every phase that follows. Log every fault, tag every GPS coordinate, record every site condition systematically from Day 1.
+          </div>
+          <div class="phase-chips">
+            <span class="chip ops">GCAA Certified Pilot</span>
+            <span class="chip ops">DJI Mavic 3T Thermal</span>
+            <span class="chip ops">Manual Anomaly Reports</span>
+            <span class="chip data">Structured Data Logging</span>
+          </div>
+          <div class="phase-output">
+            <span class="phase-output-label">Output →</span>
+            <span class="phase-output-text">First $3,000–8,000 revenue + proprietary UAE solar fault dataset begins accumulating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="phase-item">
+        <div class="phase-left">
+          <div class="phase-num">02</div>
+          <div class="phase-label">Phase 2</div>
+          <div class="phase-timeline">Month 1–3 (parallel)</div>
+        </div>
+        <div class="phase-right">
+          <div class="phase-title">Proprietary Data Asset Building</div>
+          <div class="phase-tagline">Competitive moat · Nobody else has this</div>
+          <div class="phase-body">
+            Every inspection is logged into a structured database: fault type, GPS coordinates, severity score, panel age, site conditions, temperature, time of day. You are building a <strong>proprietary UAE solar fault dataset</strong> that no competitor starting from scratch will have. This dataset is the foundation of the ML model and, later, the SaaS product. The data asset itself has valuation significance for investors.
+          </div>
+          <div class="phase-chips">
+            <span class="chip data">Fault Type Taxonomy</span>
+            <span class="chip data">GPS-Tagged Thermal Images</span>
+            <span class="chip data">Site Condition Metadata</span>
+            <span class="chip data">Open Dataset Augmentation</span>
+          </div>
+          <div class="phase-output">
+            <span class="phase-output-label">Output →</span>
+            <span class="phase-output-text">Labelled thermal image dataset — UAE-specific, growing with every job. Accelerator applications reference this as the core IP asset.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="phase-item">
+        <div class="phase-left">
+          <div class="phase-num">03</div>
+          <div class="phase-label">Phase 3</div>
+          <div class="phase-timeline">Month 2–4</div>
+        </div>
+        <div class="phase-right">
+          <div class="phase-title">AI Anomaly Classification MVP</div>
+          <div class="phase-tagline">The ML model · Built for $0 on Google Colab</div>
+          <div class="phase-body">
+            Train a lightweight <strong>convolutional neural network (CNN)</strong> on accumulated thermal images to automatically classify fault types: hotspots, soiling zones, micro-cracks, string failures, bypass diode faults. Augment with open-source thermal PV datasets to accelerate training. Built entirely on Google Colab — zero infrastructure cost. This is the MVP you demonstrate at Hub71 Initiate and TAQADAM application stage.
+          </div>
+          <div class="phase-chips">
+            <span class="chip ai">CNN Fault Classifier</span>
+            <span class="chip ai">Hotspot Detection</span>
+            <span class="chip ai">Soiling Quantification</span>
+            <span class="chip ai">String Failure ID</span>
+            <span class="chip ai">Google Colab · $0</span>
+          </div>
+          <div class="phase-output">
+            <span class="phase-output-label">Output →</span>
+            <span class="phase-output-text">Working ML prototype classifying fault types on thermal images. This is your accelerator application MVP. Apply to Hub71 Initiate + TAQADAM at this stage.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 4 -->
+      <div class="phase-item">
+        <div class="phase-left">
+          <div class="phase-num">04</div>
+          <div class="phase-label">Phase 4</div>
+          <div class="phase-timeline">Month 4–6</div>
+        </div>
+        <div class="phase-right">
+          <div class="phase-title">Intelligent Reporting Platform</div>
+          <div class="phase-tagline">Software product · Report in 2 hours not 48</div>
+          <div class="phase-body">
+            The classifier feeds an <strong>automated report engine</strong>. Post-flight, drone imagery is processed by the ML model — faults are classified, GPS-tagged, severity-scored, and ranked by estimated energy yield impact. A structured PDF report is auto-generated. Delivery time drops from 48 hours to under 2 hours. The AI doesn't just classify — it <strong>quantifies the financial cost of each fault</strong> in kWh lost per day, creating a direct ROI narrative for the client's maintenance team.
+          </div>
+          <div class="phase-chips">
+            <span class="chip ai">Auto Report Generation</span>
+            <span class="chip ai">Fault Severity Scoring</span>
+            <span class="chip ai">Energy Loss Quantification</span>
+            <span class="chip saas">Streamlit Dashboard</span>
+            <span class="chip saas">Client Portal (V1)</span>
+          </div>
+          <div class="phase-output">
+            <span class="phase-output-label">Output →</span>
+            <span class="phase-output-text">The software product. Demo-ready for NEOM Oxagon accelerator. Begin charging a premium over basic inspection — AI report commands 30–50% higher fee.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 5 -->
+      <div class="phase-item">
+        <div class="phase-left">
+          <div class="phase-num">05</div>
+          <div class="phase-label">Phase 5</div>
+          <div class="phase-timeline">Month 6–12</div>
+        </div>
+        <div class="phase-right">
+          <div class="phase-title">Predictive Asset Intelligence — SaaS</div>
+          <div class="phase-tagline">The platform · Recurring revenue · Accelerator story</div>
+          <div class="phase-body">
+            Multi-inspection data per asset enables <strong>degradation trend analysis</strong> — the system learns how each site ages, forecasts fault emergence, and recommends optimal maintenance windows before yield is lost. A monthly SaaS subscription gives clients access to their asset dashboard: live performance score, fault history, predictive maintenance calendar, yield forecast. <strong>Inspection fee + SaaS subscription</strong> = two revenue streams per client. This is the valuation inflection point — recurring software revenue on top of a proven service business is the story Hub71 Access and Wa'ed Ventures fund.
+          </div>
+          <div class="phase-chips">
+            <span class="chip ai">Degradation Trend Modelling</span>
+            <span class="chip ai">Predictive Maintenance Alerts</span>
+            <span class="chip ai">Yield Forecasting</span>
+            <span class="chip saas">SaaS Dashboard</span>
+            <span class="chip saas">Monthly Subscription</span>
+            <span class="chip accel">Hub71 Access</span>
+            <span class="chip accel">Wa'ed Ventures</span>
+            <span class="chip accel">NEOM Oxagon</span>
+          </div>
+          <div class="phase-output">
+            <span class="phase-output-label">Output →</span>
+            <span class="phase-output-text">Two revenue streams: inspection fees ($3K–8K/job) + SaaS subscriptions ($500–1,500/asset/month). Target MRR at Month 12: $30,000–60,000.</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end phases-track -->
+
+    <!-- ACCELERATOR TARGETING TABLE -->
+    <div class="reveal" style="margin-top:1.5rem;margin-bottom:0.75rem;">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:0.62rem;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;">Accelerator Application Map — When to Apply &amp; Where</p>
+    </div>
+    <table class="accel-table reveal">
+      <thead>
+        <tr>
+          <th style="width:22%">Programme</th>
+          <th style="width:12%">Country</th>
+          <th style="width:18%">Apply At Phase</th>
+          <th style="width:18%">What They Offer</th>
+          <th style="width:30%">Your Pitch Angle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="accel-name">Hub71 Initiate</span><span class="accel-country">UAE · Abu Dhabi</span></td>
+          <td><span class="badge go">UAE</span></td>
+          <td><strong>Phase 3</strong> — ML MVP ready</td>
+          <td>Venture builder, office space, pathway to AED 500K funding</td>
+          <td>AI solar fault classifier trained on proprietary UAE dataset. Pre-revenue but paying pilot clients.</td>
+        </tr>
+        <tr>
+          <td><span class="accel-name">TAQADAM (KAUST)</span><span class="accel-country">KSA · Non-dilutive</span></td>
+          <td><span class="badge go">KSA</span></td>
+          <td><strong>Phase 3</strong> — ML MVP ready</td>
+          <td>Up to $140K non-dilutive, 6-month hybrid, no equity taken</td>
+          <td>AI-powered solar inspection aligned with KSA Vision 2030 renewable energy targets. UAE traction evidence.</td>
+        </tr>
+        <tr>
+          <td><span class="accel-name">Dubai Future Accelerators</span><span class="accel-country">UAE · Dubai</span></td>
+          <td><span class="badge go">UAE</span></td>
+          <td><strong>Phase 2–3</strong> — data + early model</td>
+          <td>Paid government pilot contract. DEWA as anchor partner.</td>
+          <td>Drone AI inspection for DEWA solar assets — propose pilot at MBR Solar Park. Data feeds national solar performance benchmarking.</td>
+        </tr>
+        <tr>
+          <td><span class="accel-name">NEOM Oxagon</span><span class="accel-country">KSA · NEOM</span></td>
+          <td><span class="badge go">KSA</span></td>
+          <td><strong>Phase 4</strong> — platform demo ready</td>
+          <td>12-week hybrid, 100+ MENA investors, real NEOM pilot</td>
+          <td>Autonomous AI solar inspection platform for NEOM's GW-scale renewable infrastructure. Drones + ML + dashboard.</td>
+        </tr>
+        <tr>
+          <td><span class="accel-name">Hub71 Access + Hub71+ AI</span><span class="accel-country">UAE · Abu Dhabi</span></td>
+          <td><span class="badge watch">UAE</span></td>
+          <td><strong>Phase 4–5</strong> — SaaS V1 live</td>
+          <td>AED 500K funding (250K equity-free + 250K SAFE) + Google Cloud $300K credits</td>
+          <td>Solar asset intelligence SaaS — subscription revenue, UAE + KSA expansion, AI platform with proprietary fault dataset.</td>
+        </tr>
+        <tr>
+          <td><span class="accel-name">Wa'ed Ventures (Aramco)</span><span class="accel-country">KSA · Dhahran</span></td>
+          <td><span class="badge watch">KSA</span></td>
+          <td><strong>Phase 5</strong> — recurring MRR</td>
+          <td>$100M+ deployed, seed to Series A, Aramco client access</td>
+          <td>AI platform protecting yield on Aramco's growing solar portfolio. Subscription model, proven retention, expandable to O&amp;G infrastructure inspection.</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<!-- PARTNERSHIP -->
+<section id="partnership" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">07 — How We Work Together</span>
+      <h2 class="section-title">Who Does <em>What.</em></h2>
+    </div>
+    <div class="partner-split reveal">
+      <div class="partner-side partner-you">
+        <div class="partner-role">Your Role</div>
+        <div class="partner-title">Business Development<br>& Strategy</div>
+        <ul class="responsibility-list">
+          <li>Market research, vertical selection, and go-to-market strategy</li>
+          <li>Client identification and outreach — O&M contractors, solar operators, AEC firms</li>
+          <li>Pricing strategy, contract negotiation, and deal structuring</li>
+          <li>GCAA compliance roadmap and regulatory navigation</li>
+          <li>Report templates, service packaging, and brand positioning</li>
+          <li>Accelerator application strategy and investor narrative</li>
+          <li>Financial modelling and growth roadmap</li>
+        </ul>
+      </div>
+      <div class="partner-side partner-them">
+        <div class="partner-role">Partner's Role</div>
+        <div class="partner-title">Operations<br>& Delivery</div>
+        <ul class="responsibility-list">
+          <li>Drone piloting — all flight operations, certified and insured</li>
+          <li>Hardware operation: thermal camera, RGB, LiDAR (future)</li>
+          <li>Pre-flight planning, site assessment, safety protocols</li>
+          <li>Raw data capture: thermal imagery, video footage, mapping data</li>
+          <li>Basic data processing and deliverable preparation</li>
+          <li>Client site liaison and on-ground operations management</li>
+          <li>GCAA compliance for flight operations and permit applications</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: 1.5rem; padding: 1.5rem 2rem; background: var(--gold-pale); border: 1px solid rgba(200,145,26,0.3); border-radius: 3px;" class="reveal reveal-delay-1">
+      <div style="font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; letter-spacing: 0.18em; color: #8A6010; text-transform: uppercase; margin-bottom: 0.5rem;">Suggested Equity / Revenue Split (to discuss)</div>
+      <div style="font-family: 'Syne', sans-serif; font-size: 0.9rem; color: var(--ink); line-height: 1.7;">
+        A common structure for this type of partnership: <strong>60/40 or 50/50 revenue split</strong> — pilot takes the majority as the certified, insured operator providing the core deliverable. Business development partner receives equity stake or % for bringing the contracts, managing compliance, and building the client base. Exact split should reflect who carries the hardware cost and insurance risk. Recommend formalizing via a simple UAE partnership agreement or through the trade license structure from day one.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section id="nextsteps" class="section">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <span class="section-num">08 — If We Say Yes Today</span>
+      <h2 class="section-title">The First <em>30 Days.</em></h2>
+    </div>
+    <div class="steps-grid reveal">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-week">Week 1</div>
+        <div class="step-title">Legal Structure</div>
+        <ul class="step-actions">
+          <li>Agree partnership terms & revenue split</li>
+          <li>Apply for Freezone trade license (IFZA or Meydan — ~$1,200)</li>
+          <li>Begin GCAA UOA application online</li>
+          <li>Register on drones.gov.ae unified platform</li>
+        </ul>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-week">Week 1–2</div>
+        <div class="step-title">Hardware & Insurance</div>
+        <ul class="step-actions">
+          <li>Purchase DJI Mavic 3T (refurb or new)</li>
+          <li>Source aviation liability insurance quote</li>
+          <li>Prepare sample inspection report template</li>
+          <li>Set up invoicing and basic accounting</li>
+        </ul>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-week">Week 2–3</div>
+        <div class="step-title">First Jobs: Construction & RE</div>
+        <ul class="step-actions">
+          <li>List services on UAE contractor platforms</li>
+          <li>Outreach to 20 Dubai real estate agencies</li>
+          <li>Contact 10 AEC firms for monitoring proposals</li>
+          <li>Deliver 3 paid jobs — build portfolio</li>
+        </ul>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-week">Week 3–4</div>
+        <div class="step-title">Solar Outreach Begins</div>
+        <ul class="step-actions">
+          <li>Research UAE solar O&M contractors — build target list of 15</li>
+          <li>Prepare solar inspection pitch deck + sample thermal report</li>
+          <li>Begin cold outreach: ENOVA, TSK Group, Siemens Gamesa UAE</li>
+          <li>Offer 1 free pilot inspection for reference</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">UAE Drone Business — Partner Brief 2025</div>
+  <div class="footer-right">
+    Solar Inspection + Construction Mapping → AI Platform<br>
+    5-Phase Roadmap: Operations → Data → ML → SaaS → Scale<br>
+    Target: Hub71 · TAQADAM · NEOM Oxagon
+  </div>
+</footer>
+
+<script>
+// Progress bar
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  document.getElementById('progress').style.width = (scrollTop / docHeight * 100) + '%';
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Nav active
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-items a');
+
+new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.style.color = '');
+      const link = document.querySelector(`.nav-items a[href="#${e.target.id}"]`);
+      if (link) link.style.color = 'var(--gold)';
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' }).observe(document.querySelectorAll('section[id]')[0]);
+
+sections.forEach(s => {
+  new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => {
+          a.style.color = '';
+          a.style.background = '';
+        });
+        const link = document.querySelector(`.nav-items a[href="#${e.target.id}"]`);
+        if (link) { link.style.color = 'var(--gold)'; }
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' }).observe(s);
+});
+</script>
+</body>
+</html>
